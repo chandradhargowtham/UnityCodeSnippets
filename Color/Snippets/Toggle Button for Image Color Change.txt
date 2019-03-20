@@ -1,0 +1,28 @@
+// The Image,Button gameobjects created must be given access either through unity or getComponent method.
+// This file is attached to an empty gameobject and then that gameobject is attached to a button onclick method.
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
+using UnityEngine;
+
+public class bkgColor : MonoBehaviour
+{
+    public Image bkg;
+    public Button toggle;
+    
+    //background change button function
+    public void ToggleBKG()
+    {
+        if (bkg.color==Color.blue)
+        {
+            bkg.color = Color.red;
+            toggle.GetComponentInChildren<Text>().text = "Now red";
+        }
+        else
+        {
+            bkg.color = Color.blue;
+            toggle.GetComponentInChildren<Text>().text = "Now Blue";
+        }
+    }
+}
