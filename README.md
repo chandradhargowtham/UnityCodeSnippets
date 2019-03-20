@@ -5,7 +5,7 @@ Collection of simple yet useful c# code snippets used in unity
 
 1. Color Concepts
     > Snippets: 
-    > Change Button Text and Image Color.
-    > Toggle Button for Image Color Change
+        1.Change Button Text and Image Color.
+        2.Toggle Button for Image Color Change
     
 
