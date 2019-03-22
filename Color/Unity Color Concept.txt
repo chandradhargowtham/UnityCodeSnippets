@@ -9,12 +9,12 @@ To change color by assigning custom values:
 
 1. bkg.color = new Color(1f,0f,0f,.85f);
 
-	>  Here, the Color Constructor takes either 3 or 4 values 	 - RGB and (4th param) Alpha Value for transparency.
-	>  All the parameters are in float format and only take  	values from 0.0 to 1.0.
+	>  Here, the Color Constructor takes either 3 or 4 values - RGB and (4th param) Alpha Value for transparency.
+	>  All the parameters are in float format and only take values from 0.0 to 1.0.
 
 2. bkg.color = new Color32(255,0,0,90);
 
-	>  To specifically use 0 to 255 values, use Color32 which 	 takes Byte parameters.
+	>  To specifically use 0 to 255 values, use Color32 which takes Byte parameters.
 
 3. bkg.color = new Color(255/255,0/255,0/255,90);
 
