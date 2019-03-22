@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class ToggleText : MonoBehaviour
 {
-    public Text tt; // this must be referenced in unity to the corresponding text object.
-    public Toggle t1;
-    public Toggle t2;
+    public Text tt; // this must be referenced in unity to the corresponding text object. Attach this code to the Text Box.
+    public Toggle t1; // this must be referenced in unity to the corresponding Toggle object
+    public Toggle t2; // this must be referenced in unity to the corresponding Toggle object
     // Start is called before the first frame update
     void Start()
     {
