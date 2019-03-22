@@ -15,3 +15,19 @@ Ex:
 
 Note: Using t1.SetActive will not work. Hierarchy needs to be followed.
 
+To check if the object is active or inactive:
+
+1. enabled
+2. activeInHierarchy
+
+ if(t1.enabled==false)
+        {
+            t1.gameObject.SetActive(true);
+        }
+ 
+ or we can use
+
+  if(t1.gameObject.activeInHierarchy == true)
+        {
+            t1.gameObject.SetActive(false);
+        }

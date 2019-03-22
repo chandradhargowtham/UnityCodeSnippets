@@ -1,0 +1,21 @@
+Toggle
+
+
+Reference in code: 
+
+    public Toggle t1;
+// and attach the toggle UI in Unity to the script.
+
+
+Basic Properties:
+
+1. isOn : Boolean value
+
+	t1.isOn=false;
+
+2. To check whether toggle is active or not.
+
+	if(t1.gameObject.activeInHierarchy == false)
+	
+
+

@@ -1,0 +1,22 @@
+
+1. To select a particular gameObject from multiple objects of same type:
+
+Ex: Text Box
+
+
+       Text T1 = GameObject.Find("TextBoxName").GetComponent<Text>();
+
+2. To check if any object is active or not:
+
+        if(t1.gameObject.activeInHierarchy == false)
+
+
+3. GameObject Contructor: 
+
+		void Start()
+    	{
+        	GameObject player;
+        	player = new GameObject("Player");
+        	player.AddComponent<Rigidbody>();
+        	player.AddComponent<BoxCollider>();
+    	}
