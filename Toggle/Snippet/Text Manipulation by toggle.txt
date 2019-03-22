@@ -1,0 +1,37 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
+using UnityEngine;
+
+public class ToggleText : MonoBehaviour
+{
+    public Text tt; // this must be referenced in unity to the corresponding text object.
+    public Toggle t1;
+    public Toggle t2;
+    // Start is called before the first frame update
+    void Start()
+    {
+        tt.text = "Initialized";
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        
+        if (t1.isOn && t2.isOn)
+        {
+            tt.text = "T1 and T2 are ON";
+        }else if (t1.isOn)
+        {
+            tt.text = "T1 is ON";
+        }else if (t2.isOn)
+        {
+            tt.text = "T2 is ON";
+        }
+        else if (!(t1.isOn) && !(t2.isOn))
+        {
+            tt.text = "T1 and T2 are OFF";
+        }
+    }
+}

@@ -1,0 +1,29 @@
+Unity UI Text
+
+> Can be accessed in the Visual Studio using the keyword Text.
+> MUST include the import directive 'using UnityEngine.UI' for all UI elements.
+
+Example: 
+
+public class ToggleText : MonoBehaviour
+{
+    public Text tt; // this must be referenced in unity to the corresponding text object.
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        tt.text = "Initialized";
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        tt.text = Time.time.ToString(); //Updates every frame
+    }
+}
+
+
+>	Requires ToString() as the output is a string and the format isn't a string - In the above example, time is in float format.
+
+> 	Depending on the conditions, TEXTNAME.text can be updated.
+
