@@ -1,0 +1,17 @@
+
+SetActive Activates/Deactivates the GameObject, depending on the given true or false value.
+
+		gameObject.SetActive()
+
+Ex:
+
+1. Define a game object and assign a reference to it. 
+
+		public Toggle t1;
+
+2. In Update() or your custom function,
+
+        t1.gameObject.SetActive(false);
+
+Note: Using t1.SetActive will not work. Hierarchy needs to be followed.
+
