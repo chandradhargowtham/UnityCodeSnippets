@@ -1,0 +1,69 @@
+//Cycle Teams by arrow keys - Can be used with any sports game
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
+using UnityEngine;
+
+public class TeamSelection : MonoBehaviour
+{
+    string[] teams = new string[] {"1Australia","2Afghanistan","3Bangladesh","4England","5South Africa","6Pakistan","7New Zealand","8India","9West Indies","10Sri Lanka" };
+    static int counter = 4;
+    public Text UserTeamName;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        UserTeamName.text = "";
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            NextTeam();
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            PrevTeam();
+        }
+        
+    }
+
+    public void NextTeam()
+    {
+        if(counter>=0 && counter<teams.Length-1)
+        {
+            ++counter;
+            //Debug.Log(teams[counter]);
+            UserTeamName.text = teams[counter].ToUpper();
+        }
+        else
+        {
+            counter = 0;
+            //Debug.Log(teams[counter]);
+            UserTeamName.text = teams[counter].ToUpper();
+        }
+    }
+    public void PrevTeam()
+    {
+        if (counter > 0 && counter < teams.Length)
+        {
+            --counter;
+            //Debug.Log(teams[counter]);
+            UserTeamName.text = teams[counter].ToUpper();
+        }
+        else
+        {
+            counter = teams.Length-1;
+            //Debug.Log(teams[counter]);
+            UserTeamName.text = teams[counter].ToUpper();
+        }
+    }
+
+    
+
+
+}

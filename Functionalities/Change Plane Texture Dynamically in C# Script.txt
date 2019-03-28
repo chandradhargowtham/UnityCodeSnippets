@@ -1,0 +1,27 @@
+Change Plane Texture Dynamically in C# Script
+
+1. Create a Plane/cube and make sure there is a mesh renderer option on them(It is added by default).
+
+2. Import or create a texture. 
+3. If imported a Image (Ex: png), click on it and change its Texture Type to Sprite(2D and UI) and click on apply.
+4.
+Code: 
+	
+	 1. Create a renderer at the beginning of the script.
+	 2. Assign a component to the renderer before trying to access it(Ideally in the start function, but can be assigned the line before assigning texture. ).
+	 3.	 	
+	 	Ex: public GameObject Cube123; // Assign the cube in the inspector
+	 		public  Texture[] Flags = new Texture[10] ; //Assign textures to the array
+
+	 		Renderer rend; 
+
+	 		rend = Cube123.GetComponent<Renderer>();
+        	rend.material.mainTexture = Flags[counter]; // Create an array or just a single texture.
+
+     4. We can also change the color of the cube/plane using the same method.
+
+   	        rend.material.color = Color.black;
+
+   	 5. We can also modify the Shader: 
+
+   	 		rend.material.Shader = Shader.Find("Transparent/Diffuse");

@@ -1,0 +1,18 @@
+Convert String To Int in Unity
+
+1. int.Parse() :
+	Ex: String s="9";
+		int x = int.Parse(s);
+
+2. Convert.ToInt32()
+	Ex:  int value = Convert.ToInt32(999);
+
+
+Bonus: Convert a Button Value to Integer in C#
+
+	Ex: public void OverSelect(Button b)
+    	{
+       		oversFinal = int.Parse(b.GetComponentInChildren<Text>().text);
+    	}
+
+    -> Attach the same button to the button parameter list in the onClick() function.
