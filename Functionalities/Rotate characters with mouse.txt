@@ -1,0 +1,23 @@
+Object One: 
+
+Variable Declaration:
+
+     public float horizontalSpeed = 2.0F;
+
+Update function: 
+
+if (Input.GetMouseButton(0)==true && Input.mousePosition.x < Screen.width / 2)
+        {
+            float h = horizontalSpeed * Input.GetAxis("Mouse X");
+            transform.Rotate(0, h, 0);
+            
+        }
+
+Object Two:         
+
+ if (Input.GetMouseButton(0) == true && Input.mousePosition.x > Screen.width / 2)
+        {
+            float h = horizontalSpeed * Input.GetAxis("Mouse X");
+            transform.Rotate(0, h, 0);
+
+        }
