@@ -1,0 +1,15 @@
+ Edit the Shader properties: 
+
+ 	>Smoothness Property in the material Shader.
+
+ 		material.setFloat("_Smoothness", floatValue);
+
+Example: 
+
+Shirt.GetComponent<Renderer>().material.SetFloat("_Glossiness",0);
+
+reference= https://forum.unity.com/threads/set-smoothness-of-material-in-script.381247/
+
+	>Add a Normal Map 
+
+	Shirt.GetComponent<Renderer>().material.SetTexture("_BumpMap",nm);
