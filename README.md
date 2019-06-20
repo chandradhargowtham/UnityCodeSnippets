@@ -9,7 +9,8 @@ Collection of simple yet useful c# code snippets used in unity
         2. Toggle Button for Image Color Change
         
 2. GameObject
-    - Game Object Properties
+        1. Game Object Properties
+        2. Set gameObject.tag in script and retrieval of objects using tag
 3. SetActive
     - Snippets:
         1. Toggle Text and Toggle ONOFF
