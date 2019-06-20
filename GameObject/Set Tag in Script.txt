@@ -1,0 +1,12 @@
+Set Tag in Script 
+
+
+ ObjectName.gameObject.tag="Player"; 
+
+
+ This can be set as per requirement or in start() function.
+
+
+ Usage:
+
+ GameObject.FindGameObjectsWithTag("Char")[1].GetComponent<Animator>().Play("Idle02");
