@@ -1,0 +1,7 @@
+Get GameObjects which are children:
+
+If you want to access child GameObjects. You can get them by Transform.GetChild(index).
+
+Ex:
+
+transform.GetChild(Index);
