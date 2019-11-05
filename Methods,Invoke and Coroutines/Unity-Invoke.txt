@@ -1,0 +1,42 @@
+Invoke: 
+
+> Invoke allows you to specify the time when a function is run. You can't do this by calling a function without invoke unless you write extra code to do that.
+
+
+> Using Invoke allows you to use CancelInvoke().
+
+Syntax:
+
+		Invoke(" METHOD NAME IN STRING ", FLOAT_TIME);
+		Invoke("DestroyStats", 1.5);
+
+Ex:
+	Method Usage: 
+
+		public void Update()
+        {
+            if (//condition is true?)
+            {
+                Invoke("DestroyStats", 1);
+
+            }
+        }
+
+
+    Method Implementation:
+
+        public void DestroyStats()
+        {
+            foreach (GameObject x in List)
+            {
+                Destroy(x);
+            }
+        }
+
+
+> Invoke From Another Script:
+
+        First Reference the object and then call: 
+
+       	EX: LevelComplete lc = GetComponent<LevelComplete>();
+			lc.Invoke("RestartMethod", restartDelayTimer);
