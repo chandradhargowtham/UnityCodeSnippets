@@ -1,0 +1,6 @@
+1. In runtime this is the method to assign animator controllers.
+2. The Target Animator Controller must be in Assets/Resources folder(or any subfolders)
+3. In the required init method(like Start() or onEnable()), 
+
+                Animator animator = temp.gameObject.GetComponent<Animator>();
+                animator.runtimeAnimatorController = Resources.Load("path_of_Controller") as RuntimeAnimatorController;
