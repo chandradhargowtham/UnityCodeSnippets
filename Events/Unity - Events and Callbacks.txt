@@ -1,0 +1,62 @@
+Unity Events Basics:
+
+A. If you want to set a value:
+
+1. In the central Events File:
+
+Ex:
+ public class GrantIngameCurrency : EventManager.GameEvent
+    {
+        public float plusIngameCurrency;
+        public GrantIngameCurrency(float AddThisMoney)
+        {
+            plusIngameCurrency = AddThisMoney;
+        }
+    }
+
+2. In the place where currency is granted or the value u want to set:
+
+ 	Utils.EventAsync(new GrantIngameCurrency(10));
+
+3. In the actual currency Controller:
+	
+	private float CurrentCurrency;
+	EventManager.Instance.AddListener<GrantIngameCurrency>(OnGetUpdatedCurrencyValue);
+
+	Assign:
+	private void OnGetUpdatedCurrencyValue(GrantIngameCurrency e)
+        {
+            currentCurrency += e.plusIngameCurrency;
+            Debug.Log("Currency Current = "+ currentCurrency);
+        }
+
+B. If you want to get a value(callback)
+
+	1. In the central Events File:
+	Ex:
+		public class FetchCurrentIngameCurrency : EventManager.GameEvent
+	    {
+	        //public float currency;
+	        public Action<float> callback =null;
+	        public FetchCurrentIngameCurrency(Action<float> _callback)
+	        {
+	            callback = _callback;   
+	        }
+
+	    }
+	2. In the Controller:
+
+	Add a listener and when the event is called, callback is sent.
+
+	Ex:
+		EventManager.Instance.AddListener<FetchCurrentIngameCurrency>(fetchCurrencyCallback);
+
+	3.In the place where u want to show/display value:
+
+	Utils.EventAsync(new FetchCurrentIngameCurrency(FetchCurrencyTest));
+
+	private void FetchCurrencyTest(float obj)
+        {
+            Debug.Log(obj + "CUrrent CUrrency");
+            //throw new NotImplementedException();
+        }
