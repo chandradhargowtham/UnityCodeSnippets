@@ -1,0 +1,51 @@
+Unity - Save Ingame Data
+
+Step 1: Create an empty Object with required variables.
+Ex: 
+
+ [Serializable]
+    public class MatchStats
+    {
+        // Basic variables whose data needs to be saved
+        public int runouts;
+        public int fours;
+        public int sixes;
+        public int dotBalls;
+        public int wicketsTaken;
+        public int maidenOvers;
+        public int hattricksTaken;
+        public bool winOrTie;
+
+    }
+
+    Note: Make Sure the class is [Serializable]
+
+Step 2: Where ever you want to save the data, create an object of above class and assign its values to the values you want to save.
+Ex: 
+	Namespace(if Any).MatchStats m = new Namespace(if Any).MatchStats();
+                m.fours = TeamFours;
+                m.sixes = TeamSixes;
+
+Step 3: Use the SaveManager.SetString Method and save the value.
+Note: We are not saving a single variable but a class with large amount of data - Hence we will use the JsonUtility and convert the class to Json
+	
+	Ex: SaveManager.SetString("coinRewardStats", UnityEngine.JsonUtility.ToJson(m));                
+
+
+Retrieving the Save Data:
+
+Step 4: Where ever we want to load the data, 
+
+Ex: 		
+			string savedString = SaveManager.GetString("coinRewardStats");
+            MatchStats k = new MatchStats();
+            k = JsonUtility.FromJson<MatchStats>(savedString);
+
+Step 5: Then, we can create local variables and assign these values:
+
+Ex: int sixesHit = k.sixes;            
+
+
+NOTE: Make sure the set and getstring in save manager has a unity keyvalue/string or the other data will be overwritten and may produce undesirable output.            
+
+NOTE 2: Instead of creating a data class, we can just use SaveManager.SetString() to save individual values but that can be cumbersome at times.

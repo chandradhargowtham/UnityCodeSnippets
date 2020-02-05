@@ -1,0 +1,48 @@
+Creating and Importing Scriptable Object from Excel using Excel-Importer
+
+URL: https://github.com/mikito/unity-excel-importer/blob/master/README.md
+
+Step 1: 
+
+Create a class and use [Excel Asset] and make the class [serializable]
+
+ex:
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[ExcelAsset]
+[System.Serializable]
+public class RewardPointsObject : ScriptableObject
+{
+    public List<RewardListItem> RewardList;
+    
+}
+
+[System.Serializable]
+public class RewardListItem
+{
+    public int challengeNumber;
+    public string challengePreset;
+    public string UnlockReward;
+    public RewardPointsTaskProgress rewardPointsTaskProgress;
+
+    // eNum to track progress of the reward.
+    public enum RewardPointsTaskProgress
+    {
+        Incomplete,
+        Complete,
+        InProgress
+    }
+}
+
+Step 2: Create a .xls file with first row items as variable names and below, its values	and SHEET NAME TO BE THE CLASS NAME. 
+Step 2.1: 		Then, right click on .xls file and create < Excel Asset Script
+Step 3: Replace the placeholder Script with the required original script(public class we dont need to write again) (Ideally the class we created above).
+Ex: Here, We replace the placeholder script with
+	
+	public List<RewardListItem> RewardList;
+
+Step 4: reimport or save and close the excel sheet and it should work.
