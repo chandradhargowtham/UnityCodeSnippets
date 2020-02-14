@@ -43,6 +43,7 @@ Collection of simple yet useful c# code snippets used in Unity
 	-Concepts and Snippets:
 		1. Unity- Create and Import Scriptable Object from Excel (Credit -  Mikito Yoshiya)
 		2. Unity- Save Ingame Data
+		3. Serializable and Json Utility(Tip) 
 
 10. Events
 	-Concepts and Snippets:

@@ -1,0 +1,33 @@
+﻿Unity - Serialization and Json Utility
+
+Usage: 
+When we want to save a value or a class, we use the Json utility to convert from strings to Json and vice versa. In order to do that conversion, we need the variable or class to be serializable.
+
+"Serialization is the automatic process of transforming data structures or object states into a format that Unity can store and reconstruct later. Some of Unity’s built-in features use serialization; features such as saving and loading".
+
+We need to use the keywords
+
+[System.Serializable] to serialize the entire class
+or
+[SerializeItem] to serialize that one field(like Text,GameObject etc)
+
+
+Note:
+
+1. Serializers in Unity run in a real-time game environment.
+2. This has a significant impact on performance.
+3. Also make sure it:
+	Is public, or has a SerializeField attribute
+	Is not static
+	Is not const
+	Is not readonly
+	Has a fieldtype that can be serialized
+
+Json Utility:
+
+Json Utility Details and Syntax can be found in the Saving Game Text File.
+JsonUtility.fromJson sometimes may not work when the class you want to serialize isn't derived from monobehaviour. Ex: scriptable Object.
+In order for it to work, we can use JsonUtility.FromJsonOverwrite.
+
+
+Data sourced from (https://docs.unity3d.com/Manual/script-Serialization.html)
