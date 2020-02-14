@@ -26,8 +26,12 @@ Note:
 Json Utility:
 
 Json Utility Details and Syntax can be found in the Saving Game Text File.
-JsonUtility.fromJson sometimes may not work when the class you want to serialize isn't derived from monobehaviour. Ex: scriptable Object.
+JsonUtility.fromJson may not work when the class you want to serialize isn't derived from monobehaviour or a scriptable Object.
 In order for it to work, we can use JsonUtility.FromJsonOverwrite.
 
+Sometimes, error may pop saying Cannot deserialize..
+
+->The JsonUtility can only be used for data classes. MonoBehaviours are components which need to be attached to gameobjects. You can't simply "create" an instance, 
+-> class can not be attached to a gameobject. It's only ment as a data class that represents your save data.All classes you want to save / restore have to be normal serializable classes 
 
 Data sourced from (https://docs.unity3d.com/Manual/script-Serialization.html)
