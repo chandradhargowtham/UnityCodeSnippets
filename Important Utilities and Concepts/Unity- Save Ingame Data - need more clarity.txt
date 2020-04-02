@@ -29,7 +29,7 @@ Ex:
 Step 3: Use the SaveManager.SetString Method and save the value.
 Note: We are not saving a single variable but a class with large amount of data - Hence we will use the JsonUtility and convert the class to Json
 	
-	Ex: SaveManager.SetString("coinRewardStats", UnityEngine.JsonUtility.ToJson(m));                
+	Ex: PlayerPrefs.SetString("coinRewardStats", UnityEngine.JsonUtility.ToJson(m));                
 
 
 Retrieving the Save Data:
@@ -37,7 +37,7 @@ Retrieving the Save Data:
 Step 4: Where ever we want to load the data, 
 
 Ex: 		
-			string savedString = SaveManager.GetString("coinRewardStats");
+			string savedString = PlayerPrefs.GetString("coinRewardStats");
             MatchStats k = new MatchStats();
             k = JsonUtility.FromJson<MatchStats>(savedString);
 
@@ -48,4 +48,4 @@ Ex: int sixesHit = k.sixes;
 
 NOTE: Make sure the set and getstring in save manager has a unity keyvalue/string or the other data will be overwritten and may produce undesirable output.            
 
-NOTE 2: Instead of creating a data class, we can just use SaveManager.SetString() to save individual values but that can be cumbersome at times.
+NOTE 2: Instead of creating a data class, we can just use PlayerPrefs.SetString() to save individual values but that can be cumbersome at times.

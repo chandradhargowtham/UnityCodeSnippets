@@ -34,6 +34,7 @@ Collection of simple yet useful c# code snippets used in Unity
 7. Misc
 	-Concepts and Snippets:
 		1. Convert String to Int in Unity
+		2. Create and print Dictionary Values
 
 8. Materials
 	-Concepts:

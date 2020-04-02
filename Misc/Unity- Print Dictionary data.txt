@@ -1,0 +1,21 @@
+1. Create a dictionary:
+
+Ex: Dictionary<string, int> userDataDict = new Dictionary<string, int>();
+
+2. Add Values to it:
+
+Ex: 		if (!userDataDict.ContainsKey(temp[0]))
+                    {
+                        userDataDict.Add(temp[0], Int32.Parse(temp[1]));
+                    }
+
+3. Display Single Data:
+
+Ex:     Debug.LogError((userDataDict["FoursCount"] +"PLUS "+ userDataDict["SixesCount"]));
+
+4. Display complete data via loops:
+
+Ex:	foreach(KeyValuePair<string,int> x in userDataDict)
+                {
+                   Debug.LogError(x.Key + " is " + x.Value );
+                }
